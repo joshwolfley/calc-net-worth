@@ -23,7 +23,7 @@ class Balancesheet extends Component {
 
     render() {
         return (
-            <div className="balancesheet">
+            <div className={styles.balancesheet}>
                 <h1 className = { styles.title }> My Personal Net Worth Calculator </h1>
 
                 <Asset />

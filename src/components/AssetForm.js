@@ -20,13 +20,13 @@ class AssetForm extends Component {
 
     render() {
 
-        const {addAsset,
-            assetName,
+        const {addAsset} = this.props;
+        const{assetName,
             assetAmount
-        } = this.props;
+        } = this.state;
 
         return(
-            <div>
+            <div className={styles.form}>
                 <input
                     className= {styles.text}
                     placeholder="Type Here To Add Asset Account"

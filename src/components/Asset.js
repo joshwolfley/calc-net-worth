@@ -7,27 +7,27 @@ import {connect} from "react-redux";
 
 class Asset extends Component  {
 
-    state = {
-        assets: [
-            {
-                asset: "Cash",
-                amount: 18000.91
-            },
-            {
-                asset: "Home Equity",
-                amount: 39840.66
-            },
-        ]
-    };
+    // state = {
+    //     assets: [
+    //         {
+    //             asset: "Cash",
+    //             amount: 18000.91
+    //         },
+    //         {
+    //             asset: "Home Equity",
+    //             amount: 39840.66
+    //         },
+    //     ]
+    // };
 
     render() {
         const {assets} = this.props;
-        console.log(this.props);
+        console.log(assets);
         let total_assets = 0.00;
-        for (let i = 0; i < this.state.assets.length; i +=1){
-            total_assets += this.state.assets[i].amount;
+        for (let i = 0; i < assets.length; i +=1){
+            total_assets += parseFloat(assets[i].amount);
         }
-
+        console.log(typeof total_assets);
         return (
             <div className= { styles.asset }>
 
@@ -41,12 +41,11 @@ class Asset extends Component  {
                         index={index}
                     />
                 )}
-                <h3 className = { styles.total } > Total Assets: {"$" + addCommas(total_assets.toFixed(2))} </h3>
+                <h3 className = { styles.total } > Total Assets: {"$" + addCommas(parseFloat(total_assets).toFixed(2))} </h3>
 
                 <h2 className= { styles.total }> ------------------------------------------------------------------------- </h2>
 
                 <AssetForm />
-
             </div>
         );
     };

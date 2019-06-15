@@ -43,7 +43,7 @@ h3{
 }
 
 /* FORMS */
-form {
+.form {
   display: flex;
 }
 

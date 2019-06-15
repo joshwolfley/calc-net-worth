@@ -1,14 +1,14 @@
-import * as AssetActionTypes from '../actiontypes/asset.js';
+import * as LiabilityActionTypes from '../actiontypes/liability';
 
 const initialState = {
 
-    assets: [
+    liabilities: [
         {
-            account_name: "Cash",
+            account_name: "Car Loan",
             amount: 18000.91
         },
         {
-            account_name: "Home Equity",
+            account_name: "Mortgage",
             amount: 39840.66
         },
 
@@ -18,13 +18,13 @@ const initialState = {
 
 
 
-export default function Asset(state=initialState, action){
+export default function Liability(state=initialState, action){
 
     switch (action.type) {
 
-        case AssetActionTypes.ADD_ASSET: {
+        case LiabilityActionTypes.ADD_LIABILITY: {
             return Object.assign({}, state, {
-                assets: [...state.assets, {
+                liabilities: [...state.liabilities, {
                     account_name: action.name,
                     amount: action.amount
                 }]
@@ -35,4 +35,3 @@ export default function Asset(state=initialState, action){
             return state
     }
 }
-
