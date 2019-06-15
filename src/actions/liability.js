@@ -2,11 +2,16 @@ import * as LiabilityActionTypes from '../actiontypes/liability';
 
 export const addLiability = (name, amount) => {
 
-    return {
-        type: LiabilityActionTypes.ADD_LIABILITY,
-        name,
-        amount
-    };
+    amount = parseFloat(amount);
+
+    if (amount){
+        return {
+            type: LiabilityActionTypes.ADD_LIABILITY,
+            name,
+            amount
+        };
+    }
+
 
 };
 

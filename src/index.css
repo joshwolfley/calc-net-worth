@@ -85,6 +85,26 @@ h3{
   text-shadow: none;
   cursor: pointer;
 }
+.finish {
+  display: block;
+  width: 787px;
+  height: 40px;
+  background-color: #61dafb;
+  cursor: pointer;
+  color: #282c34;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.networth{
+  float: right;
+  padding-right: 280px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+}
 
 button,
 .submit {

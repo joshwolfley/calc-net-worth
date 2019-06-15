@@ -22,10 +22,11 @@ class Asset extends Component  {
 
     render() {
         const {assets} = this.props;
-        console.log(assets);
         let total_assets = 0.00;
         for (let i = 0; i < assets.length; i +=1){
-            total_assets += parseFloat(assets[i].amount);
+            if (parseFloat(assets[i].amount)) {
+                total_assets += parseFloat(assets[i].amount);
+            }
         }
         console.log(typeof total_assets);
         return (
@@ -43,9 +44,9 @@ class Asset extends Component  {
                 )}
                 <h3 className = { styles.total } > Total Assets: {"$" + addCommas(parseFloat(total_assets).toFixed(2))} </h3>
 
-                <h2 className= { styles.total }> ------------------------------------------------------------------------- </h2>
 
                 <AssetForm />
+
             </div>
         );
     };
@@ -53,7 +54,7 @@ class Asset extends Component  {
 
 function mapStateToProps(state) {
     return {
-        assets: state.assets
+        assets: state.assets.assets
     }
 }
 

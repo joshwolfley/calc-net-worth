@@ -37,7 +37,7 @@ class LiabilityForm extends Component {
                 <input
                     className={styles.text}
                     placeholder="Type Here To Indicate Amount"
-                    value={liabilityName}
+                    value={liabilityAmount}
                     onChange={this.onChange}
                     name={'liabilityAmount'}
                 />

@@ -2,11 +2,16 @@ import * as AssetActionTypes from '../actiontypes/asset';
 
 export const addAsset = (name, amount) => {
 
-    return {
-        type: AssetActionTypes.ADD_ASSET,
-        name,
-        amount
-    };
+    amount = parseFloat(amount);
+
+    if (amount) {
+        return {
+            type: AssetActionTypes.ADD_ASSET,
+            name,
+            amount
+        };
+    }
+
 
 };
 

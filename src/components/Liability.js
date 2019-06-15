@@ -22,10 +22,11 @@ class Liability extends Component {
 
     render () {
         const {liabilities} = this.props;
-        console.log(liabilities);
         let total_liab = 0.00;
         for (let i = 0; i < liabilities.length; i +=1){
-            total_liab += parseFloat(liabilities[i].amount);
+            if (parseFloat(liabilities[i].amount)){
+                total_liab += parseFloat(liabilities[i].amount);
+            }
         }
         return (
             <div className="liability">
@@ -41,9 +42,9 @@ class Liability extends Component {
                 )}
 
                 <h3 className={styles.total}> Total Liabilities: {"$" + addCommas(parseFloat(total_liab).toFixed(2))}</h3>
-                <h2 className={styles.total}> ------------------------------------------------------------------------- </h2>
 
                 <LiabilityForm />
+
             </div>
         );
     };
@@ -52,7 +53,7 @@ class Liability extends Component {
 
 function mapStateToProps(state) {
     return {
-        liabilities: state.liabilities
+        liabilities: state.liabilities.liabilities
     }
 }
 

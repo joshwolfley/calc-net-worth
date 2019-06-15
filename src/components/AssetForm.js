@@ -10,12 +10,13 @@ class AssetForm extends Component {
         assetAmount: '',
     };
 
+
     onChange = event => {
         const {target} = event;
         const {name, value} = target;
         this.setState({
                 [name]: value
-            })
+            });
     };
 
     render() {
@@ -48,7 +49,6 @@ class AssetForm extends Component {
                     onClick={ () => addAsset(assetName, assetAmount)}>
                     Add Account
                 </button>
-
             </div>
         );
     }

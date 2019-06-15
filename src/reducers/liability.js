@@ -3,14 +3,14 @@ import * as LiabilityActionTypes from '../actiontypes/liability';
 const initialState = {
 
     liabilities: [
-        {
-            account_name: "Car Loan",
-            amount: 18000.91
-        },
-        {
-            account_name: "Mortgage",
-            amount: 39840.66
-        },
+        // {
+        //     account_name: "Car Loan",
+        //     amount: 18000.91
+        // },
+        // {
+        //     account_name: "Mortgage",
+        //     amount: 39840.66
+        // },
 
     ]
 
