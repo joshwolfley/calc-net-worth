@@ -39,8 +39,8 @@ class Liability extends Component {
                     />
                 )}
 
-                <h3 className="total"> Total Liabilities: {"$" + addCommas(total_liab.toFixed(2))}</h3>
-                <h2 className="total"> ------------------------------------------------------------------------- </h2>
+                <h3 className={styles.total}> Total Liabilities: {"$" + addCommas(total_liab.toFixed(2))}</h3>
+                <h2 className={styles.total}> ------------------------------------------------------------------------- </h2>
 
                 <LiabilityForm />
             </div>

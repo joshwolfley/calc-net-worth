@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import styles from '../index.css'
+import {connect} from 'react-redux'
+import {addAsset} from '../actions/asset'
 
 class AssetForm extends Component {
 
     render() {
+        const {addAsset} = this.props;
+        
         return(
             <form /*onSubmit={this.handleSubmit}*/>
                 <input className= {styles.text}
@@ -15,14 +19,25 @@ class AssetForm extends Component {
                     placeholder="Type Here To Indicate Amount"
                 />
 
-                <input className={styles.submit}
-                    value="Add Account"
-                />
-            </form>
+                < button className={styles.submit} onClick={ () => addAsset("acc_name", 987)}>
+                    Add Account
+                </button>
 
+            </form>
         );
     }
 }
 
-export default AssetForm
+function mapStateToProps(state) {
+
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        addAsset: (name, amount) => dispatch(addAsset(name, amount)) // firing off an action
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AssetForm)
 
