@@ -5,21 +5,47 @@ import {addAsset} from '../actions/asset'
 
 class AssetForm extends Component {
 
+    state = {
+        assetName: '',
+        assetAmount: '',
+    };
+
+    onChange = event => {
+        const {target} = event;
+        const {name, value} = target;
+        this.setState({
+                [name]: value
+            })
+    };
+
     render() {
-        const {addAsset, assets} = this.props;
+
+        const {addAsset,
+            assetName,
+            assetAmount
+        } = this.props;
 
         return(
-            <div /*onSubmit={this.handleSubmit}*/>
-                <input className= {styles.text}
-                    //ref={this.playerInput}
+            <div>
+                <input
+                    className= {styles.text}
                     placeholder="Type Here To Add Asset Account"
+                    value={assetName}
+                    onChange={this.onChange}
+                    name='assetName'
                 />
-                <input className={styles.text}
-                    //ref={this.playerInput}
+                <input
+                    className={styles.text}
                     placeholder="Type Here To Indicate Amount"
+                    value={assetAmount}
+                    onChange={this.onChange}
+                    name='assetAmount'
+
                 />
 
-                < button className={styles.submit} onClick={ () => addAsset("acc_name", 987)}>
+                < button
+                    className={styles.submit}
+                    onClick={ () => addAsset(assetName, assetAmount)}>
                     Add Account
                 </button>
 
