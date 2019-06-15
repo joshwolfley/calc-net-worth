@@ -7,11 +7,6 @@ const initialState = {
         //     account_name: 'Cash',
         //     amount: 18000.91
         // },
-        // {
-        //     account_name: "Home Equity",
-        //     amount: 39840.66
-        // },
-
     ]
 
 };
@@ -28,6 +23,13 @@ export default function Asset(state=initialState, action){
                     amount: action.amount
                 }]
             })
+        }
+
+        case AssetActionTypes.CLEAR_ASSETS: {
+            return Object.assign({}, state, {
+                assets: []
+                }
+            )
         }
 
         default:

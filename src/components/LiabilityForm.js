@@ -18,9 +18,23 @@ class LiabilityForm extends Component {
         })
     };
 
+    onSubmit = () => {
+        const {addLiability} = this.props;
+        const {
+            liabilityName,
+            liabilityAmount
+        } = this.state;
+
+        addLiability(liabilityName, liabilityAmount);
+
+        this.setState({
+            liabilityName: '',
+            liabilityAmount: '',
+        })
+    };
+
     render() {
 
-        const {addLiability} = this.props;
         const{liabilityName,
             liabilityAmount
         } = this.state;
@@ -31,20 +45,20 @@ class LiabilityForm extends Component {
                     className={styles.text}
                     placeholder="Type Here To Add Liability Account"
                     value={liabilityName}
-                    onChange={this.onChange}
+                    onChange={ this.onChange }
                     name='liabilityName'
                 />
                 <input
                     className={styles.text}
                     placeholder="Type Here To Indicate Amount"
                     value={liabilityAmount}
-                    onChange={this.onChange}
+                    onChange={ this.onChange }
                     name={'liabilityAmount'}
                 />
 
                 < button
                     className={styles.submit}
-                    onClick={ () => addLiability(liabilityName, liabilityAmount)}>
+                    onClick={ this.onSubmit }>
                     Add Account
                 </button>
             </div>

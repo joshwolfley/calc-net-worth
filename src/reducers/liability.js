@@ -7,11 +7,6 @@ const initialState = {
         //     account_name: "Car Loan",
         //     amount: 18000.91
         // },
-        // {
-        //     account_name: "Mortgage",
-        //     amount: 39840.66
-        // },
-
     ]
 
 };
@@ -29,6 +24,13 @@ export default function Liability(state=initialState, action){
                     amount: action.amount
                 }]
             })
+        }
+
+        case LiabilityActionTypes.CLEAR_LIABILITIES: {
+            return Object.assign({}, state, {
+                    liabilities: []
+                }
+            )
         }
 
         default:

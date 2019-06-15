@@ -19,9 +19,23 @@ class AssetForm extends Component {
             });
     };
 
+    onSubmit = () => {
+        const {addAsset} = this.props;
+        const {assetName,
+            assetAmount
+        } = this.state;
+
+        addAsset(assetName, assetAmount);
+
+        this.setState({
+            assetName: '',
+            assetAmount: '',
+        })
+
+    };
+
     render() {
 
-        const {addAsset} = this.props;
         const{assetName,
             assetAmount
         } = this.state;
@@ -32,21 +46,21 @@ class AssetForm extends Component {
                     className= {styles.text}
                     placeholder="Type Here To Add Asset Account"
                     value={assetName}
-                    onChange={this.onChange}
+                    onChange={ this.onChange }
                     name='assetName'
                 />
                 <input
                     className={styles.text}
                     placeholder="Type Here To Indicate Amount"
                     value={assetAmount}
-                    onChange={this.onChange}
+                    onChange={ this.onChange }
                     name='assetAmount'
 
                 />
 
                 < button
                     className={styles.submit}
-                    onClick={ () => addAsset(assetName, assetAmount)}>
+                    onClick={ this.onSubmit }>
                     Add Account
                 </button>
             </div>

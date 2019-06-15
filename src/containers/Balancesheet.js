@@ -4,6 +4,8 @@ import Liability from '../components/Liability'
 import styles from '../index.css'
 import {connect} from "react-redux";
 import {addCommas} from '../functions'
+import {clearAssets} from "../actions/sharedActions";
+import {clearLiabilities} from "../actions/sharedActions";
 
 class Balancesheet extends Component {
 
@@ -11,24 +13,22 @@ class Balancesheet extends Component {
         view: true
     };
 
-    // finish = () => {
-    //     this.setState({
-    //         view: false,
-    //     });
-    // };
-    //
-    // edit = () => {
-    //     this.setState({
-    //         view: true,
-    //     });
-    // };
+    onSubmit = () => {
+        const {
+            clearAssets,
+            clearLiabilities
+        } = this.props;
+
+        clearAssets();
+        clearLiabilities();
+
+    };
 
 
     render() {
 
         const {assets} = this.props;
         const {liabilities} = this.props;
-        console.log(assets);
         let net_worth = 0.00;
         for (let i = 0; i < assets.length; i +=1){
             if (parseFloat(assets[i].amount)){
@@ -50,7 +50,9 @@ class Balancesheet extends Component {
 
                 <div>
                     <h3 className={styles.networth}>My Net Worth: ${addCommas(parseFloat(net_worth).toFixed(2))} </h3>
-                    <button className={styles.finish} onClick={this.finish}
+                    <button
+                        className={styles.finish}
+                        onClick={this.onSubmit}
                         type="submit"
                             value="Finish">
                         Clear Net Worth Calculator
@@ -69,4 +71,11 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Balancesheet);
+function mapDispatchToProps(dispatch) {
+    return {
+        clearAssets: () => dispatch(clearAssets()), // firing off an action
+        clearLiabilities: () => dispatch(clearLiabilities())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Balancesheet);
