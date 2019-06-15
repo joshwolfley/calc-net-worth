@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Asset from '../components/Asset'
 import Liability from '../components/Liability'
+import styles from '../index.css'
 
 class Balancesheet extends Component {
 
@@ -23,7 +24,7 @@ class Balancesheet extends Component {
     render() {
         return (
             <div className="balancesheet">
-                <h1 className = "title"> My Personal Net Worth Calculator </h1>
+                <h1 className = { styles.title }> My Personal Net Worth Calculator </h1>
 
                 <Asset />
                 <Liability />

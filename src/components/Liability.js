@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import LiabilityForm from "./LiabilityForm";
 import { addCommas } from "../functions";
 import LiabilityAccounts from "./LiabilityAccounts"
+import styles from '../index.css'
 
 class Liability extends Component {
 

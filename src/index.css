@@ -31,7 +31,7 @@ code {
 }
 
 .asset{
-padding-top: 20px;
+    padding-top: 20px;
 }
 h2{
   color: #61dafb;
@@ -47,7 +47,7 @@ form {
   display: flex;
 }
 
-input[type=text] {
+.text {
   flex-grow: 1;
   border-width: 0 0 1px 0;
   margin: 15px 10px 15px 15px;
@@ -62,12 +62,12 @@ input[type=text] {
   outline: none;
 }
 
-input[type=text]::-webkit-input-placeholder{
+.text::-webkit-input-placeholder{
   color: #61dafb;
   letter-spacing: 2px;
 }
 
-input[type=text]:focus{
+.text:focus{
   background-color: rgba(0, 0, 0, 0.4);
 }
 

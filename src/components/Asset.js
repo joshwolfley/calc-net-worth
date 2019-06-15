@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AssetForm from "./AssetForm";
 import AssetAccounts from "./AssetAccounts"
 import { addCommas } from "../functions"
+import styles from '../index.css'
 
 class Asset extends Component  {
 
@@ -26,7 +27,7 @@ class Asset extends Component  {
         }
 
         return (
-            <div className="asset">
+            <div className= { styles.asset }>
 
                 <h2>Assets</h2>
 
@@ -38,9 +39,9 @@ class Asset extends Component  {
                         index={index}
                     />
                 )}
-                <h3 className="total"> Total Assets: {"$" + addCommas(total_assets.toFixed(2))} </h3>
+                <h3 className = { styles.total } > Total Assets: {"$" + addCommas(total_assets.toFixed(2))} </h3>
 
-                <h2 className="total"> ------------------------------------------------------------------------- </h2>
+                <h2 className= { styles.total }> ------------------------------------------------------------------------- </h2>
 
                 <AssetForm />
 

@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
+import styles from '../index.css'
 
 class AssetForm extends Component {
 
     render() {
         return(
             <form /*onSubmit={this.handleSubmit}*/>
-                <input
-                    type="text"
+                <input className= {styles.text}
                     //ref={this.playerInput}
                     placeholder="Type Here To Add Asset Account"
                 />
-                <input
-                    type="text"
+                <input className={styles.text}
                     //ref={this.playerInput}
                     placeholder="Type Here To Indicate Amount"
                 />
 
-                <input
-                    type="submit"
+                <input className={styles.text}
                     value="Add Account"
                 />
             </form>
