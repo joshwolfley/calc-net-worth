@@ -41,6 +41,11 @@ class Balancesheet extends Component {
             }
         }
 
+        let net_worth_class = styles.positiveNetWorth;
+        if (net_worth < 0) {
+            net_worth_class = styles.negativeNetWorth
+        }
+
         return (
             <div className={styles.balancesheet}>
                 <h1 className = { styles.title }> My Personal Net Worth Calculator </h1>
@@ -49,7 +54,8 @@ class Balancesheet extends Component {
                 <Liability />
 
                 <div>
-                    <h3 className={styles.networth}>My Net Worth: ${addCommas(parseFloat(net_worth).toFixed(2))} </h3>
+
+                    <h3 className={net_worth_class}>My Net Worth: ${addCommas(parseFloat(net_worth).toFixed(2))} </h3>
                     <button
                         className={styles.finish}
                         onClick={this.onSubmit}

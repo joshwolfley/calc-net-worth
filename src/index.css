@@ -98,12 +98,22 @@ h3{
   font-size: 1em;
 }
 
-.networth{
+.positiveNetWorth{
   float: right;
   padding-right: 280px;
   text-transform: uppercase;
   letter-spacing: 2px;
   outline: none;
+  color: lightgreen;
+}
+
+.negativeNetWorth{
+  float: right;
+  padding-right: 270px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+  color: red;
 }
 
 button,
