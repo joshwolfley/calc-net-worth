@@ -71,7 +71,7 @@ form {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-input[type=submit] {
+.submit {
   display: block;
   font-size: .8em;
   margin: 15px 15px 15px 0;
@@ -87,7 +87,7 @@ input[type=submit] {
 }
 
 button,
-input[type=submit] {
+.submit {
   outline: none;
   transition: background-color 0.2s ease,
   color 0.2s ease;

@@ -15,7 +15,7 @@ class AssetForm extends Component {
                     placeholder="Type Here To Indicate Amount"
                 />
 
-                <input className={styles.text}
+                <input className={styles.submit}
                     value="Add Account"
                 />
             </form>
