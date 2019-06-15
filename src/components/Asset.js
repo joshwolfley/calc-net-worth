@@ -3,6 +3,7 @@ import AssetForm from "./AssetForm";
 import AssetAccounts from "./AssetAccounts"
 import { addCommas } from "../functions"
 import styles from '../index.css'
+import {connect} from "react-redux";
 
 class Asset extends Component  {
 
@@ -20,7 +21,8 @@ class Asset extends Component  {
     };
 
     render() {
-
+        const {assets} = this.props;
+        console.log(this.props);
         let total_assets = 0.00;
         for (let i = 0; i < this.state.assets.length; i +=1){
             total_assets += this.state.assets[i].amount;
@@ -32,9 +34,9 @@ class Asset extends Component  {
                 <h2>Assets</h2>
 
                 {/* List Assets in Current State */}
-                {this.state.assets.map( (asset, index) =>
+                {assets.map( (asset, index) =>
                     <AssetAccounts
-                        asset={asset.asset}
+                        asset={asset.account_name}
                         amount={asset.amount}
                         index={index}
                     />
@@ -50,4 +52,10 @@ class Asset extends Component  {
     };
 }
 
-export default Asset
+function mapStateToProps(state) {
+    return {
+        assets: state.assets
+    }
+}
+
+export default connect(mapStateToProps)(Asset)

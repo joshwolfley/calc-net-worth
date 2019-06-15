@@ -6,10 +6,10 @@ import {addAsset} from '../actions/asset'
 class AssetForm extends Component {
 
     render() {
-        const {addAsset} = this.props;
-        
+        const {addAsset, assets} = this.props;
+
         return(
-            <form /*onSubmit={this.handleSubmit}*/>
+            <div /*onSubmit={this.handleSubmit}*/>
                 <input className= {styles.text}
                     //ref={this.playerInput}
                     placeholder="Type Here To Add Asset Account"
@@ -23,12 +23,16 @@ class AssetForm extends Component {
                     Add Account
                 </button>
 
-            </form>
+            </div>
         );
     }
 }
 
 function mapStateToProps(state) {
+    return {
+        assets: state.assets
+    }
+
 
 }
 

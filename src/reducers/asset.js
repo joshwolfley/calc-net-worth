@@ -3,20 +3,14 @@ import * as AssetActionTypes from '../actiontypes/asset.js';
 const initialState = {
     assets: [
         {
-            account_name: 'Cash',
-            amount: 300.32,
-        }
-        ,
+            asset: "Cash",
+            amount: 18000.91
+        },
         {
-            account_name: 'A/R',
-            amount: 20.89,
-        }
-        ,
-        {
-            account_name: 'Inventory',
-            amount: 500,
-        }
-        ,
+            asset: "Home Equity",
+            amount: 39840.66
+        },
+
     ]
 
 };
