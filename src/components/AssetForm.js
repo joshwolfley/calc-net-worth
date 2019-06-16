@@ -61,7 +61,7 @@ class AssetForm extends Component {
                 < button
                     className={styles.submit}
                     onClick={ this.onSubmit }>
-                    Add Account
+                    Add Asset
                 </button>
             </div>
         );

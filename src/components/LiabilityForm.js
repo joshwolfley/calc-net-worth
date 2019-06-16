@@ -59,7 +59,7 @@ class LiabilityForm extends Component {
                 < button
                     className={styles.submit}
                     onClick={ this.onSubmit }>
-                    Add Account
+                    Add Liability
                 </button>
             </div>
 
