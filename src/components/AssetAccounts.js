@@ -8,7 +8,6 @@ class AssetAccounts extends PureComponent {
         const {
             asset,
             amount,
-            index,
         } = this.props;
 
         return (

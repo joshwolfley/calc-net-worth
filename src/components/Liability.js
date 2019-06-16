@@ -7,19 +7,6 @@ import {connect} from 'react-redux'
 
 class Liability extends Component {
 
-    // state = {
-    //         liabilities: [
-    //             {
-    //                 liability: "Student Loans",
-    //                 amount: 18006.91
-    //             },
-    //             {
-    //                 liability: "Car Loans",
-    //                 amount: 1043.66
-    //             },
-    //         ]
-    //     };
-
     render () {
         const {liabilities} = this.props;
         let total_liab = 0.00;

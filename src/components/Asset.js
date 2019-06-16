@@ -7,19 +7,6 @@ import {connect} from "react-redux";
 
 class Asset extends Component  {
 
-    // state = {
-    //     assets: [
-    //         {
-    //             asset: "Cash",
-    //             amount: 18000.91
-    //         },
-    //         {
-    //             asset: "Home Equity",
-    //             amount: 39840.66
-    //         },
-    //     ]
-    // };
-
     render() {
         const {assets} = this.props;
         let total_assets = 0.00;

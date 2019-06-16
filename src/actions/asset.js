@@ -14,11 +14,3 @@ export const addAsset = (name, amount) => {
 
 
 };
-
-export const removeAsset = index => {
-
-    return {
-        type: AssetActionTypes.DELETE_ASSET,
-        index
-    }
-};

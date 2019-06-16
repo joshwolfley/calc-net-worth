@@ -14,11 +14,3 @@ export const addLiability = (name, amount) => {
 
 
 };
-
-export const removeLiability = index => {
-
-    return {
-        type: LiabilityActionTypes.DELETE_LIABILITY,
-        index
-    }
-};

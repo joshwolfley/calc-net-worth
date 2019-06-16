@@ -36,4 +36,3 @@ export default function Asset(state=initialState, action){
             return state
     }
 }
-

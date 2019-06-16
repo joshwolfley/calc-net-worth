@@ -8,7 +8,6 @@ class LiabilityAccounts extends PureComponent {
         const {
             liability,
             amount,
-            index,
         } = this.props;
 
         return (
